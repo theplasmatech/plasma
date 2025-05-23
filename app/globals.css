@@ -1,0 +1,170 @@
+@import "tailwindcss";
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Animations for pipeline component */
+@keyframes slowPulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(122, 172, 242, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(122, 172, 242, 0.7));
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(122, 172, 242, 0.3));
+  }
+}
+
+@keyframes glowDelay {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(122, 172, 242, 0.3));
+    opacity: 0.4;
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(122, 172, 242, 0.9));
+    opacity: 0.8;
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(122, 172, 242, 0.3));
+    opacity: 0.4;
+  }
+}
+
+@keyframes nodePulse {
+  0% {
+    r: 15;
+    opacity: 0.7;
+  }
+  50% {
+    r: 18;
+    opacity: 1;
+  }
+  100% {
+    r: 15;
+    opacity: 0.7;
+  }
+}
+
+@keyframes dataFlow {
+  0% {
+    opacity: 0;
+    r: 2;
+  }
+  50% {
+    opacity: 1;
+    r: 4;
+  }
+  100% {
+    opacity: 0;
+    r: 2;
+  }
+}
+
+.animate-slow-pulse {
+  animation: slowPulse 4s infinite ease-in-out;
+}
+
+.animate-glow {
+  animation: glow 3s infinite ease-in-out;
+}
+
+.animate-glow-delay {
+  animation: glowDelay 4s infinite ease-in-out 1s;
+}
+
+.node-pulse {
+  animation: nodePulse 2s infinite ease-in-out;
+}
+
+.data-flow-point {
+  animation: dataFlow 2s infinite ease-in-out;
+}
+
+.flow-point-1 {
+  animation-delay: 0s;
+}
+
+.flow-point-2 {
+  animation-delay: 0.5s;
+}
+
+.flow-point-3 {
+  animation-delay: 1s;
+}
+
+.flow-point-4 {
+  animation-delay: 1.5s;
+}
+
+.pulsing-pipeline {
+  filter: drop-shadow(0 0 15px rgba(33, 53, 111, 0.3));
+}
+
+
+.database {
+  offset-anchor: 10px 0px;
+  animation: database-animation-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.db-light-1 {
+  offset-path: path("M 31 10 v 15 q 0 5 5 5 h 59 q 5 0 5 5 v 25");
+}
+
+.db-light-2 {
+  offset-path: path("M 77 10 v 10 q 0 5 5 5 h 13 q 5 0 5 5 v 25");
+}
+
+.db-light-3 {
+  offset-path: path("M 124 10 v 10 q 0 5 -5 5 h -14 q -5 0 -5 5 v 25");
+}
+
+.db-light-4 {
+  offset-path: path("M 170 10 v 15 q 0 5 -5 5 h -60 q -5 0 -5 5 v 25");
+}
+
+@keyframes database-animation-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}

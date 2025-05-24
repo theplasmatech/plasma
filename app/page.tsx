@@ -1,9 +1,8 @@
 import HomeP from "./main/Home";
 import ClientShowcase from "./main/About";
-import Services from "./main/Service";
 import Work from "./main/work";
-import HappyClients from "./main/HappyClients";
 import Footer from "./main/Footer";
+import OurDevelopers from "./main/OurDevelopers";
 
 
 export default function Home() {
@@ -12,9 +11,10 @@ export default function Home() {
       <HomeP />
       <ClientShowcase />
       <Work/>
-      <Services/>
+      {/* <Services/> */}
       {/* <DataFlowDiagram /> */}
-      <HappyClients/>
+      {/* <HappyClients/> */}
+      <OurDevelopers/>
       <Footer/>
     </>
 

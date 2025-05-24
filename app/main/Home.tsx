@@ -26,11 +26,11 @@ function HomeP() {
       const handleMouseMove = (e: MouseEvent) => {
         const { clientX, clientY } = e;
         const { innerWidth, innerHeight } = window;
-        
+
         // Calculate mouse position relative to center (values from -1 to 1)
         const x = (clientX / innerWidth - 0.5) * 2;
         const y = (clientY / innerHeight - 0.5) * 2;
-        
+
         // Apply parallax effect to video
         gsap.to(videoRef.current, {
           x: x * 30, // Adjust these values to control the movement intensity
@@ -50,37 +50,40 @@ function HomeP() {
   return (
     <div className="relative h-screen w-full overflow-hidden" ref={container}>
       {/* Background Video */}
-      <video 
+      <video
         ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        className="hero-video absolute w-full h-full object-cover z-0"
+        className="hero-video absolute z-0 object-cover max-w-[200vw] max-h-[200vh] md:max-w-[80vw] md:max-h-[80vh]
+ left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-lg"
       >
+
         <source src="/macbook.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
 
       {/* Content Container */}
       <div className="absolute inset-0 z-20">
         {/* Logo (fixed in top left) */}
         <div className="fixed top-4 left-4">
-          <Image 
-            src="/logo.png" 
-            alt="Logo" 
-            width={48} 
-            height={48} 
-            className="h-12 w-auto" 
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={48}
+            height={48}
+            className="h-12 w-auto"
           />
         </div>
-        
+
         {/* Navbar (in top center) */}
         <div className="flex justify-center w-full">
           <Navbar />
         </div>
 
-        
+
       </div>
     </div>
   );

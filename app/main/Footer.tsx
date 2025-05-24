@@ -41,11 +41,26 @@ const Footer = () => {
                className="text-white/60 hover:text-white transition-colors group">
               <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
-            <a href="mailto:contact@plasma.com" 
+            <a href="mailto:contact@theplasma.tech" 
                className="text-white/60 hover:text-white transition-colors group">
               <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
           </div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="mt-6 text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 text-white/60">
+            <a href="tel:+1234567890" className="hover:text-white transition-colors">
+              📞 +91 9619132050
+            </a>
+            <a href="mailto:contact@theplasma.tech" className="hover:text-white transition-colors">
+              ✉️ contact@theplasma.tech
+            </a>
+          </div>
+          <p className="mt-2 text-red-400 text-sm font-medium">
+            ⚠️ Why wait for email reply, direct call.
+          </p>
         </div>
 
         {/* Copyright and made with love */}

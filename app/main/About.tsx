@@ -84,8 +84,8 @@ const ClientShowcase: React.FC = () => {
             </div>
 
             {/* Rectangle grid */}
-            <div className={`grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4 md:px-8 lg:px-12 pb-12`}>
-                {renderRectangles()}
+            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 px-4 md:px-8 lg:px-12 pb-12">
+            {renderRectangles()}
             </div>
         </div>
     );

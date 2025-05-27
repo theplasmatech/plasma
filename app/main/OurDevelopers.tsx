@@ -33,19 +33,12 @@ const developers: OurDevelopers[] = [
     feedback: "AI ML Integration",
     linkedin: "https://linkedin.com/in/mikejohnson"
   },
-//   {
-//     id: 4,
-//     name: "Karan",
-//     image: "/testimonials/parth.jpeg",
-//     feedback: "UI/UX",
-//     linkedin: "https://linkedin.com/in/sarahwilliams"
-//   },
   {
-    id: 5,
-    name: "Rahul",
-    image: "/testimonials/rahul.jpg",
-    feedback: "Backend",
-    linkedin: "https://linkedin.com/in/davidbrown"
+    id: 4,
+    name: "Karan",
+    image: "/testimonials/karan.jpeg",
+    feedback: "UI/UX",
+    linkedin: "https://linkedin.com/in/sarahwilliams"
   },
   {
     id: 6,

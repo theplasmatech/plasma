@@ -33,14 +33,13 @@ function HomeP() {
 
         // Apply parallax effect to video
         gsap.to(videoRef.current, {
-          x: x * 30, // Adjust these values to control the movement intensity
+          x: x * 30,
           y: y * 30,
           duration: 1,
           ease: "power2.out"
         });
       };
 
-      // Add and remove event listener
       window.addEventListener("mousemove", handleMouseMove);
       return () => window.removeEventListener("mousemove", handleMouseMove);
     },
@@ -48,7 +47,7 @@ function HomeP() {
   );
 
   return (
-    <div className="relative h-screen w-full overflow-hidden" ref={container}>
+    <div className="relative h-screen w-full overflow-hidden bg-black" ref={container}>
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -59,15 +58,13 @@ function HomeP() {
         className="hero-video absolute z-0 object-cover max-w-[200vw] max-h-[200vh] md:max-w-[80vw] md:max-h-[80vh]
  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-lg"
       >
-
-        <source src="/macbook.mp4" type="video/mp4" />
+        <source src="/mac.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-
       {/* Content Container */}
       <div className="absolute inset-0 z-20">
-        {/* Logo (fixed in top left) */}
+        {/* Logo */}
         <div className="fixed top-4 left-4">
           <Image
             src="/logo.png"
@@ -78,12 +75,10 @@ function HomeP() {
           />
         </div>
 
-        {/* Navbar (in top center) */}
+        {/* Navbar */}
         <div className="flex justify-center w-full">
           <Navbar />
         </div>
-
-
       </div>
     </div>
   );

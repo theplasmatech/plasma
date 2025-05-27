@@ -20,7 +20,7 @@ const projects: Project[] = [
   {
     id: 2,
     title: "VYRA AI",
-    videoUrl: "/videos/gym.mp4",
+    videoUrl: "/videos/vyraM.mp4",
     size: 'portrait'
   },
   {

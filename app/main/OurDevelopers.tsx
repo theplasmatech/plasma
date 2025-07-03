@@ -42,9 +42,9 @@ const developers: OurDevelopers[] = [
   },
   {
     id: 6,
-    name: "Sanket",
-    image: "/testimonials/sanket2.jpeg",
-    feedback: "Nothing",
+    name: "Kartik",
+    image: "/testimonials/kartik.png",
+    feedback: "UI/UX",
     linkedin: "https://linkedin.com/in/emilydavis"
   }
 ];

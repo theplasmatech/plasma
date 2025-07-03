@@ -43,7 +43,7 @@ const developers: OurDevelopers[] = [
   {
     id: 6,
     name: "Kartik",
-    image: "/testimonials/kartik.png",
+    image: "/testimonials/kartik.jpg",
     feedback: "UI/UX",
     linkedin: "https://linkedin.com/in/emilydavis"
   }

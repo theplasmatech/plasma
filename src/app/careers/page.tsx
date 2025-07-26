@@ -10,6 +10,17 @@ interface Job {
   title: string;
   location: string;
   type: string;
+  salary: string;
+  experience: string;
+  vacancies: number;
+  skills: string[];
+  details: string;
+  overview: string;
+  companyBrief: string;
+  responsibilities: string[];
+  qualifications: string[];
+  required: string[];
+  lifeLinks: { label: string; url: string }[];
 }
 
 export default function Careers() {
@@ -17,12 +28,118 @@ export default function Careers() {
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [form, setForm] = useState({ name: "", email: "", phone: "", resume: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [expandedJobIdx, setExpandedJobIdx] = useState<number | null>(null);
 
   const jobs: Job[] = [
-    { title: 'Frontend Developer', location: 'Remote', type: 'Full-Time' },
-    { title: 'Backend Developer', location: 'Bangalore, India', type: 'Full-Time' },
-    { title: 'Product Designer', location: 'Remote', type: 'Contract' },
-    { title: 'Marketing Intern', location: 'Mumbai, India', type: 'Internship' }
+    {
+      title: 'Business Development Executive',
+      location: 'Ahmedabad, Gujarat, India',
+      type: 'Full-Time',
+      salary: '₹4,00,000 - ₹6,00,000 per annum',
+      experience: '2+ years',
+      vacancies: 2,
+      skills: ['Sales', 'Marketing', 'Communication', 'Interpersonal Skills'],
+      details: '', // Not used, see below
+      overview: `We are looking for a motivated Business Development Executive with 2+ of experience to join our growing team. The ideal candidate should possess basic knowledge of sales and marketing principles and demonstrate strong communication and interpersonal skills. You will assist in identifying new business opportunities, building client relationships, and supporting the sales team in achieving revenue targets.`,
+      companyBrief: `We have had an office in Ahmedabad Gujarat, India for the past 8 years.\nISO Registered company and work according to international standards.\nDevelopers are supposed to work with end clients (clients may be from the US, Europe, and Israel)\nWe have recently established a second office in the New Ranip area, Ahmedabad.\nWe provide a solution to Frontend, High-end custom development, Commercial WordPress, and mobile applications.`,
+      responsibilities: [
+        'Identify New Business Opportunities: Assist in researching and identifying potential clients and market trends to generate new business leads.',
+        'Support Sales Team: Collaborate with the sales team to prepare proposals, presentations, and other sales materials to enhance client engagement.',
+        'Build and Maintain Client Relationships: Establish and nurture relationships with potential clients through effective communication and follow-up.',
+        'Assist in Market Analysis: Conduct market research to understand competitor offerings and identify areas for improvement in our services.',
+        'Track and Report Sales Activities: Maintain accurate records of sales activities and client interactions in the CRM system, providing regular updates to management.',
+        'Participate in Networking Events: Attend industry events, conferences, and networking functions to promote the company and establish valuable connections.'
+      ],
+      qualifications: [
+        'Educational Background: A bachelor’s degree in business, marketing, or a related field is preferred.',
+        'Basic Understanding of Sales Principles: Familiarity with sales techniques, lead generation, and customer relationship management processes.',
+        'Strong Interpersonal Skills: Excellent communication and interpersonal abilities, with a willingness to learn and adapt in a fast-paced environment.'
+      ],
+      required: [
+        'Work from office only',
+        'At least 2+ years of experience',
+        'Must have a bachelor\'s degree or Master\'s degree.',
+        'Communication must be in fluent English'
+      ],
+      lifeLinks: [
+        { label: 'Instagram', url: 'https://www.instagram.com/codeandcore/' },
+        { label: 'LinkedIn', url: 'https://in.linkedin.com/company/code-and-core' },
+        { label: 'Facebook', url: 'https://www.facebook.com/codeandcore.' }
+      ]
+    },
+    {
+      title: 'Business Development Executive',
+      location: 'Ahmedabad, Gujarat, India',
+      type: 'Full-Time',
+      salary: '₹4,00,000 - ₹6,00,000 per annum',
+      experience: '2+ years',
+      vacancies: 2,
+      skills: ['Sales', 'Marketing', 'Communication', 'Interpersonal Skills'],
+      details: '', // Not used, see below
+      overview: `We are looking for a motivated Business Development Executive with 2+ of experience to join our growing team. The ideal candidate should possess basic knowledge of sales and marketing principles and demonstrate strong communication and interpersonal skills. You will assist in identifying new business opportunities, building client relationships, and supporting the sales team in achieving revenue targets.`,
+      companyBrief: `We have had an office in Ahmedabad Gujarat, India for the past 8 years.\nISO Registered company and work according to international standards.\nDevelopers are supposed to work with end clients (clients may be from the US, Europe, and Israel)\nWe have recently established a second office in the New Ranip area, Ahmedabad.\nWe provide a solution to Frontend, High-end custom development, Commercial WordPress, and mobile applications.`,
+      responsibilities: [
+        'Identify New Business Opportunities: Assist in researching and identifying potential clients and market trends to generate new business leads.',
+        'Support Sales Team: Collaborate with the sales team to prepare proposals, presentations, and other sales materials to enhance client engagement.',
+        'Build and Maintain Client Relationships: Establish and nurture relationships with potential clients through effective communication and follow-up.',
+        'Assist in Market Analysis: Conduct market research to understand competitor offerings and identify areas for improvement in our services.',
+        'Track and Report Sales Activities: Maintain accurate records of sales activities and client interactions in the CRM system, providing regular updates to management.',
+        'Participate in Networking Events: Attend industry events, conferences, and networking functions to promote the company and establish valuable connections.'
+      ],
+      qualifications: [
+        'Educational Background: A bachelor’s degree in business, marketing, or a related field is preferred.',
+        'Basic Understanding of Sales Principles: Familiarity with sales techniques, lead generation, and customer relationship management processes.',
+        'Strong Interpersonal Skills: Excellent communication and interpersonal abilities, with a willingness to learn and adapt in a fast-paced environment.'
+      ],
+      required: [
+        'Work from office only',
+        'At least 2+ years of experience',
+        'Must have a bachelor\'s degree or Master\'s degree.',
+        'Communication must be in fluent English'
+      ],
+      lifeLinks: [
+        { label: 'Instagram', url: 'https://www.instagram.com/codeandcore/' },
+        { label: 'LinkedIn', url: 'https://in.linkedin.com/company/code-and-core' },
+        { label: 'Facebook', url: 'https://www.facebook.com/codeandcore.' }
+      ]
+    },
+    {
+      title: 'Business Development Executive',
+      location: 'Ahmedabad, Gujarat, India',
+      type: 'Full-Time',
+      salary: '₹4,00,000 - ₹6,00,000 per annum',
+      experience: '2+ years',
+      vacancies: 2,
+      skills: ['Sales', 'Marketing', 'Communication', 'Interpersonal Skills'],
+      details: '', // Not used, see below
+      overview: `We are looking for a motivated Business Development Executive with 2+ of experience to join our growing team. The ideal candidate should possess basic knowledge of sales and marketing principles and demonstrate strong communication and interpersonal skills. You will assist in identifying new business opportunities, building client relationships, and supporting the sales team in achieving revenue targets.`,
+      companyBrief: `We have had an office in Ahmedabad Gujarat, India for the past 8 years.\nISO Registered company and work according to international standards.\nDevelopers are supposed to work with end clients (clients may be from the US, Europe, and Israel)\nWe have recently established a second office in the New Ranip area, Ahmedabad.\nWe provide a solution to Frontend, High-end custom development, Commercial WordPress, and mobile applications.`,
+      responsibilities: [
+        'Identify New Business Opportunities: Assist in researching and identifying potential clients and market trends to generate new business leads.',
+        'Support Sales Team: Collaborate with the sales team to prepare proposals, presentations, and other sales materials to enhance client engagement.',
+        'Build and Maintain Client Relationships: Establish and nurture relationships with potential clients through effective communication and follow-up.',
+        'Assist in Market Analysis: Conduct market research to understand competitor offerings and identify areas for improvement in our services.',
+        'Track and Report Sales Activities: Maintain accurate records of sales activities and client interactions in the CRM system, providing regular updates to management.',
+        'Participate in Networking Events: Attend industry events, conferences, and networking functions to promote the company and establish valuable connections.'
+      ],
+      qualifications: [
+        'Educational Background: A bachelor’s degree in business, marketing, or a related field is preferred.',
+        'Basic Understanding of Sales Principles: Familiarity with sales techniques, lead generation, and customer relationship management processes.',
+        'Strong Interpersonal Skills: Excellent communication and interpersonal abilities, with a willingness to learn and adapt in a fast-paced environment.'
+      ],
+      required: [
+        'Work from office only',
+        'At least 2+ years of experience',
+        'Must have a bachelor\'s degree or Master\'s degree.',
+        'Communication must be in fluent English'
+      ],
+      lifeLinks: [
+        { label: 'Instagram', url: 'https://www.instagram.com/codeandcore/' },
+        { label: 'LinkedIn', url: 'https://in.linkedin.com/company/code-and-core' },
+        { label: 'Facebook', url: 'https://www.facebook.com/codeandcore.' }
+      ]
+    }
+    // Add more jobs here as needed
   ];
 
   const openModal = (job: Job) => {
@@ -52,7 +169,7 @@ export default function Careers() {
   return (
     <div className="font-sans">
       {/* Hero Section */}
-      <section className="h-screen flex flex-col justify-center items-center text-center px-6">
+      <section className="h-screen flex flex-col justify-center items-center text-center px-6 bg-black text-white">
         <h2 className="font-bold leading-tight" style={{ fontSize: '8vw' }}>
           Our People are our biggest inspiration <br /> and the secret to our Success
         </h2>
@@ -62,28 +179,72 @@ export default function Careers() {
       </section>
 
       <section className="min-h-screen px-6 py-12 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-red-600 mb-8 text-lg font-medium">Current Openings</p>
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="mx-auto">
+          <p className="text-black mb-8 text-[3vw] font-bold font-weight-600">Current Openings</p>
+          <div className="grid grid-cols-1 gap-8 mx-[2vw]">
             {jobs.map((job, idx) => (
               <div
                 key={idx}
-                className="bg-white/20 backdrop-blur-md shadow-2xl rounded-sm p-8 border border-white/30 hover:bg-white/30 hover:shadow-3xl transition-all duration-300 relative flex flex-col justify-between min-h-[220px] text-[#18181b] hover:scale-[1.02]"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
-                  backdropFilter: 'blur(20px)',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.2)'
-                }}
+                className="bg-white/10 backdrop-blur-lg  p-8 border border-white/20 shadow-lg hover:shadow-xl hover:bg-white/20 transition-all duration-300 relative flex flex-col justify-between min-h-[220px] text-[#18181b] hover:scale-[1.02] ring-1 ring-white/10"
               >
+
                 <div>
                   <div className="flex items-center gap-3 mb-2">
                     <span className="inline-block w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse shadow-lg"></span>
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{job.title}</h3>
                   </div>
-                  <p className="text-gray-600 mb-4 font-medium">{job.location} • {job.type}</p>
+                  <p className="text-gray-600 mb-2 font-medium">{job.location} • {job.type}</p>
+                  <div className="mb-2 text-sm">
+                    <span className="font-semibold">Salary:</span> {job.salary}<br />
+                    <span className="font-semibold">Experience:</span> {job.experience}<br />
+                    <span className="font-semibold">Vacancies:</span> {job.vacancies}<br />
+                    <span className="font-semibold">Skills:</span> {job.skills.join(', ')}
+                  </div>
+                  <button
+                    className="text-blue-700 underline text-sm mb-2 focus:outline-none"
+                    onClick={() => setExpandedJobIdx(expandedJobIdx === idx ? null : idx)}
+                  >
+                    {expandedJobIdx === idx ? 'Hide Details' : 'Read More'}
+                  </button>
+                  {expandedJobIdx === idx && (
+                    <div className="mt-2 p-4 bg-white/80 rounded text-[#18181b] text-sm shadow-inner border border-white/30">
+                      <div className="mb-2">
+                        <span className="font-semibold">Job Overview:</span>
+                        <div>{job.overview}</div>
+                      </div>
+                      <div className="mb-2">
+                        <span className="font-semibold">Company Brief:</span>
+                        <div className="whitespace-pre-line">{job.companyBrief}</div>
+                      </div>
+                      <div className="mb-2">
+                        <span className="font-semibold">Responsibilities:</span>
+                        <ul className="list-disc ml-5">
+                          {job.responsibilities.map((r, i) => <li key={i}>{r}</li>)}
+                        </ul>
+                      </div>
+                      <div className="mb-2">
+                        <span className="font-semibold">Qualifications:</span>
+                        <ul className="list-disc ml-5">
+                          {job.qualifications.map((q, i) => <li key={i}>{q}</li>)}
+                        </ul>
+                      </div>
+                      <div className="mb-2">
+                        <span className="font-semibold">Required Experience, Skills, and Qualifications:</span>
+                        <ul className="list-disc ml-5">
+                          {job.required.map((q, i) => <li key={i}>{q}</li>)}
+                        </ul>
+                      </div>
+                      <div className="mb-2">
+                        <span className="font-semibold">Life @ codeandcore:</span>
+                        <ul className="list-disc ml-5">
+                          {job.lifeLinks.map((l, i) => <li key={i}><a href={l.url} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">{l.label}</a></li>)}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <button
-                  className="mt-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-sm shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:ring-offset-2 hover:shadow-xl transform hover:-translate-y-0.5"
+                  className="mt-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-[4px] shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:ring-offset-2 hover:shadow-xl transform hover:-translate-y-0.5"
                   onClick={() => openModal(job)}
                 >
                   Apply Now
@@ -96,12 +257,8 @@ export default function Careers() {
 
       {/* Modal Popup */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/20">
-          <div className="bg-white/95 backdrop-blur-xl rounded-sm shadow-2xl p-8 w-full max-w-md relative animate-fade-in text-[#18181b] border border-white/20"
-               style={{
-                 backdropFilter: 'blur(25px)',
-                 boxShadow: '0 25px 50px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3)'
-               }}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30">
+          <div className="bg-white/80 backdrop-blur-2xl rounded-[6px] shadow-2xl p-8 w-full max-w-md relative animate-fade-in text-[#18181b] border border-white/30 ring-1 ring-inset ring-white/10">
             <button
               className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none transition-colors"
               onClick={closeModal}
@@ -116,8 +273,7 @@ export default function Careers() {
       )}
 
       <TechStacks />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
-  

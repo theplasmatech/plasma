@@ -40,7 +40,7 @@ const TechStacks: React.FC = () => {
         return images.map((img, index) => (
             <div
                 key={index}
-                className={`relative border border-gray-600 flex items-center justify-center p-6 h-32 transition-all hover:border-white group overflow-hidden bg-white${
+                className={`relative border border-gray-100 flex items-center justify-center p-6 h-32 transition-all hover:border-white group overflow-hidden bg-white${
                     hoveredIndex !== null && hoveredIndex !== index ? 'opacity-30' : 'opacity-100'
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
@@ -53,7 +53,7 @@ const TechStacks: React.FC = () => {
                 <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-gray-400 opacity-60"></div>
 
                 {/* Images */}
-                <div className="w-full h-full flex items-center justify-center relative">
+                <div className="w-full h-full flex items-center justify-center relative filter blur-sm group-hover:filter-none transition-all duration-300">
                     {/* Normal image */}
                     <Image
                         src={img.normal}
@@ -77,10 +77,10 @@ const TechStacks: React.FC = () => {
 
 
     return (
-        <div className="min-h-screen w-screen bg-black text-white flex flex-col bg-white">
+        <div className=" w-screen bg-black text-white flex flex-col bg-white">
             {/* Header text */}
             <div className="pt-16 pb-12 text-center">
-                <h1 className="text-4xl md:text-5xl font-bold">Tech Stack We Work</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-black">Join us if you're skilled in any one of these</h1>
             </div>
 
             {/* Rectangle grid */}

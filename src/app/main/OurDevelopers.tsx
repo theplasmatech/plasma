@@ -56,7 +56,7 @@ const OurDevelopers = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-center text-white/90 hover:text-white transition-colors duration-300 mb-8">
           We build innovation
         </h2>
-        <div className="relative overflow-hidden flex items-center h-full">
+        <div className="relative overflow-hidden flex items-center">
           {/* Fade gradients */}
           <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>

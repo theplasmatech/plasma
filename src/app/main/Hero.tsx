@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Hero() {
     return (
       <div className="relative h-screen w-full overflow-hidden">
@@ -12,30 +14,6 @@ export default function Hero() {
           <source src="/plasma.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
-        {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-        
-        {/* Navbar */}
-        <nav className="absolute top-6 left-0 w-full z-20 flex items-center justify-between px-8 py-4 text-white">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img src="/plasma_logo.png" alt="Logo" className="h-[44px] w-auto mr-2" style={{ maxWidth: '160px', height: '44px' }} />
-          </div>
-          
-          {/* Center Navigation Links */}
-          <ul className="flex space-x-6 text-lg">
-            <li><a href="#home" className="hover:opacity-75 transition-opacity">Home</a></li>
-            <li><a href="#about" className="hover:opacity-75 transition-opacity">About</a></li>
-            <li><a href="#service" className="hover:opacity-75 transition-opacity">Service</a></li>
-            <li><a href="#contact" className="hover:opacity-75 transition-opacity">Contact</a></li>
-          </ul>
-          
-          {/* Book a Call Button */}
-          <button className="bg-white border-2 px-6 py-2 rounded-md text-lg font-semibold text-black hover:bg-gray-100 transition-all duration-300">
-            Book a Call
-          </button>
-        </nav>
         
         {/* Center Text */}
         <div className="relative z-20 flex items-center justify-center h-full text-center px-4">

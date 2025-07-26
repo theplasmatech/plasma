@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react';
-import { Github, Twitter, Linkedin, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -31,19 +30,15 @@ const Footer = () => {
           <div className="flex items-center gap-6">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
                className="text-white/60 hover:text-white transition-colors group">
-              <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
                className="text-white/60 hover:text-white transition-colors group">
-              <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                className="text-white/60 hover:text-white transition-colors group">
-              <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
             <a href="mailto:contact@theplasma.tech" 
                className="text-white/60 hover:text-white transition-colors group">
-              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>
@@ -70,7 +65,6 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-2 text-white/40 text-sm">
             <span>Made with</span>
-            <Heart className="w-4 h-4 text-red-500 animate-pulse" />
             <span>by the Plasma team</span>
           </div>
         </div>
